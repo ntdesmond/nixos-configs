@@ -1,4 +1,13 @@
 { config, pkgs, ... }: {
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+    substituters = [ "https://cache.nixos.org/" ];
+    trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+    ];
+  };
+  
   # Locale & language
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
