@@ -1,0 +1,43 @@
+# Nix build artifacts
+result
+result-*
+
+# Nix caches & state
+.nix-defexpr/
+.nix-profile
+.local/state/nix/
+.cache/nix/
+
+# Direnv (if you use it)
+.direnv/
+.envrc
+.envrc.local
+
+# Secrets & sensitive files (explicit safety net)
+*.key
+*.pem
+*.secret
+*.env
+.secrets/
+secrets/
+private/
+id_*
+known_hosts
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# NixOS/HM temporary files
+*.nix.tmp
+*.nix.bak
+home-manager-backup/
+
+# OS-specific
+*.log
+*.pid
