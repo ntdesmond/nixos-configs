@@ -20,7 +20,9 @@
   fileSystems."/mnt/hdd" = {
     device = "/dev/disk/by-uuid/fa811de1-afca-439b-8754-bba96020f040";
     fsType = "ext4";
-    options = [ "users" "nofail" ];
+    options = [
+     "users" "nofail" "exec"
+    ];
   };
 
   fileSystems."/mnt/win" = {
@@ -39,4 +41,8 @@
   # Auto-login for this machine only
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "admin";
+
+  networking.hosts = {
+    "130.255.77.28" = [ "ntc.party" ];
+  };
 }
