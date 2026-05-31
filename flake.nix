@@ -5,9 +5,13 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # home-manager.url = "github:nix-community/home-manager/release-25.11";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-vscode-extensions, ... }: {
     nixosConfigurations.kittenbox = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
@@ -16,6 +20,7 @@
           system = "x86_64-linux";
           config.allowUnfree = true;
         };
+        inherit nix-vscode-extensions;
       };
       modules = [
         ./hosts/kittenbox/default.nix
