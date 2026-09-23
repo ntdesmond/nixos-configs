@@ -6,5 +6,7 @@
   
   environment.systemPackages = with pkgs; [
     firefox
+    gparted
+    transmission_4-qt
   ];
 }

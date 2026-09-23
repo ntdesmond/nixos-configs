@@ -39,7 +39,7 @@
   };
       
   # Auto-login for this machine only
-  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.enable = false;
   services.displayManager.autoLogin.user = "admin";
 
   networking.hosts = {
